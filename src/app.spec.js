@@ -100,4 +100,31 @@ describe('App', () => {
 			});
 		});
 	})
+
+	describe('weather controller', () => {
+		describe('list items', () => {
+			it('responds to requests', function (done) {
+		    request(TestApplication.app)
+		      .get('/weather')
+		      .expect(200)
+					.then(({ body }) => {
+						const weatherItems = body.data;
+
+						expect(weatherItems[0].state).to.be.eq("bad");
+						expect(weatherItems[0].startTime).to.be.eq("2018-07-09T23:00:00");
+						expect(weatherItems[0].endTime).to.be.eq("2018-07-10T15:00:00");
+						
+						expect(weatherItems[1].state).to.be.eq("good");
+						expect(weatherItems[1].startTime).to.be.eq("2018-07-10T15:00:00");
+						expect(weatherItems[1].endTime).to.be.eq("2018-07-14T06:00:00");
+						
+						expect(weatherItems[2].state).to.be.eq("bad");
+						expect(weatherItems[2].startTime).to.be.eq("2018-07-14T06:00:00");
+						expect(weatherItems[2].endTime).to.be.eq("2018-07-14T21:00:00");
+						done();
+					})
+					.catch(done);
+		  });
+		});
+	})
 });
