@@ -1,0 +1,10 @@
+[{
+    "name": "John Doe",
+    "role": "Developer"
+},{
+    "name": "Jane Doe",
+    "role": "Frontend Developer"
+},{
+    "name": "Peter Doe",
+    "role": "DevOps"
+}]
