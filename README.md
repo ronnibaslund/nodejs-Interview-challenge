@@ -1,5 +1,4 @@
-# Node.js test task for candidate to backend developer position in PennyBox
-
+# Node.js test task for candidate to backend developer position
 ## Development
 
 ### Setup environment
